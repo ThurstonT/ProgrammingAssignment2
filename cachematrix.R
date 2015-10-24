@@ -19,13 +19,16 @@ makeCacheMatrix <- function(x = matrix()) {
     }
 
 
-## Write a short comment describing this function
+## This is a function that 'caches' the inverse of the matrix in the global environment.
+## Once the inverse of the matrix is computed it is stored in the global environment.  This operation
+## saves computational time when frequently computing the same matrix inversion
+## the special programming about this function is the use of the <<- operator. 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
          mm <- x$getmatrix()
         if(!is.null(mm)) {
-            message("getting cached data")
+##            message("getting cached data")
             return(mm)
         }
         data <- x$get()
